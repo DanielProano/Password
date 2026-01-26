@@ -15,7 +15,6 @@ app.use(
     origin: [
       "https://password-frontend-896359618082.europe-west1.run.app/",
       "https://dannyproano.com",
-      "http://localhost:5173",
     ],
     methods: ["GET", "POST", "PATCH", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
