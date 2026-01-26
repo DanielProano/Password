@@ -1,4 +1,4 @@
 {
-   "backend" : "https://backend-896359618082.europe-west1.run.app",
+   "backend" : "http://localhost:8080",
    "port" : 5173
 }

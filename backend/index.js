@@ -15,6 +15,7 @@ app.use(
     origin: [
       "https://frontend-896359618082.europe-west1.run.app",
       "https://dannyproano.com",
+      "http://localhost:5173",
     ],
     methods: ["GET", "POST", "PATCH", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
@@ -43,11 +44,5 @@ const db = new sqlite3.Database("./passwords.db", (err) => {
 });
 
 const passRoutes = require("./Projects/Password.js")(db, auth_limiter);
-//const webRoutes = require("./Projects/Website.js")(db, auth_limiter);
 
 app.use("/api", passRoutes);
-//app.use("/api/website", webRoutes);
-
-app.get("/api/wakeup", (req, res) => {
-  console.log("Wakeup Backend Request");
-});

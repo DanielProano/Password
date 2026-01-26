@@ -1,0 +1,166 @@
+.vault-container {
+  position: relative;
+  padding: 4rem 2rem;
+}
+
+.vault-title {
+  position: fixed;
+  top: 5rem;
+  left: 1rem;
+  font-size: 2rem;
+  color: white;
+}
+
+.vault-output {
+  position: fixed;
+  top: 8rem;
+  left: 1rem;
+  color: white;
+}
+
+.vault-add-btn-container {
+  position: fixed;
+  bottom: 2.5rem;
+  right: 2.5rem;
+}
+
+.vault-add-btn {
+  border-radius: 24px;
+  border: 2px solid #87a6ed;
+  padding: 0.625rem 1.25rem;
+  font-size: 1rem;
+  color: #87a6ed;
+  background: none;
+  cursor: pointer;
+  transition: background 0.1s;
+}
+.vault-add-btn:hover {
+  background: #394b74;
+}
+
+.vault-popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.vault-popup {
+  background: rgba(58, 89, 161, 0.5);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  width: 24rem;
+}
+
+.vault-popup-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  color: white;
+}
+
+.vault-popup-body label {
+  display: block;
+  margin-bottom: 0.25rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.875rem;
+}
+
+.vault-popup-body input,
+.vault-popup-body textarea {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0.5rem;
+  padding: 0.625rem 1rem;
+  color: white;
+  margin-bottom: 0.75rem;
+}
+
+.vault-popup-body button {
+  display: block;
+  margin: 0 auto;
+  border-radius: 24px;
+  border: 2px solid #87a6ed;
+  padding: 0.625rem 1.25rem;
+  color: #87a6ed;
+  background: none;
+  cursor: pointer;
+  transition: background 0.1s;
+}
+.vault-popup-body button:hover {
+  background: #394b74;
+}
+
+.vault-list {
+  margin-top: 8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  max-width: 48rem;
+}
+
+.vault-entry {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.vault-entry:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(0, 217, 255, 0.3);
+}
+
+.vault-entry-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.vault-entry-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  background: rgba(0, 217, 255, 0.2);
+  color: #00d9ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 1.125rem;
+  border-radius: 0.5rem;
+}
+
+.vault-entry-delete {
+  opacity: 0;
+  transition: opacity 0.2s;
+  color: rgba(255, 255, 255, 0.6);
+  background: none;
+  border: none;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.vault-entry:hover .vault-entry-delete {
+  opacity: 1;
+}
+.vault-entry-delete:hover {
+  color: #f87171;
+  background: rgba(248, 113, 113, 0.1);
+}
