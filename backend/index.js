@@ -13,7 +13,7 @@ app.set("trust proxy", 1);
 app.use(
   cors({
     origin: [
-      "https://password-frontend-896359618082.europe-west1.run.app/",
+      "https://password-frontend-896359618082.europe-west1.run.app",
       "https://dannyproano.com",
     ],
     methods: ["GET", "POST", "PATCH", "DELETE", "OPTIONS"],
