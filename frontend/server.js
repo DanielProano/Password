@@ -13,7 +13,10 @@ const __dirname = path.dirname(__filename);
 
 app.use(express.static(path.join(__dirname, "dist")));
 
-app.use((req, res) => {
+app.use("*", (req, res) => {
+  if (path.extname(req.path)) {
+    return res.status(404).send("File not found");
+  }
   res.sendFile(path.join(__dirname, "dist/index.html"));
 });
 
