@@ -5,7 +5,7 @@ import path from "path";
 import config from "./src/config.json";
 
 export default defineConfig({
-  base: "/",
+  base: "/pass/",
   plugins: [react()],
   server: {
     host: "0.0.0.0",
