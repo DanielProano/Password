@@ -6,7 +6,6 @@ import config from "./src/config.json";
 
 export default defineConfig({
   plugins: [react()],
-  base: "/pass/",
   server: {
     host: "0.0.0.0",
     port: parseInt(config.port) || 5173,
