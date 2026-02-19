@@ -11,9 +11,9 @@ const PORT = process.env.PORT || 5173;
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-app.use(express.static(path.join(__dirname, "dist")));
+app.use("/pass", express.static(path.join(__dirname, "dist")));
 
-app.use((req, res) => {
+app.use("/pass", (req, res) => {
   res.sendFile(path.join(__dirname, "dist/index.html"));
 });
 
