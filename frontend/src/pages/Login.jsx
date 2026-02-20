@@ -41,7 +41,7 @@ function LoginPage() {
         const key = await derive_key(password, salt);
         set_derived_key({ key: key, token: token });
 
-        navigation("/pass/vault");
+        navigation("/vault");
       } else {
         setOutput(data.message || "Login failed, try again");
       }

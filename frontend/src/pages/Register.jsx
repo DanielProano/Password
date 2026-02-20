@@ -48,7 +48,7 @@ function Register() {
       });
 
       if (response.ok) {
-        navigate("/pass/RegisterSuccess");
+        navigate("/RegisterSuccess");
       } else {
         setOutput("Couldnt Register");
       }
