@@ -31,19 +31,6 @@ const auth_limiter = rate_limit({
 
 const PORT = process.env.PORT || 8080;
 
-app.use((req, res, next) => {
-  res.setHeader(
-    "Content-Security-Policy",
-    "default-src 'self'; " +
-    "script-src 'self' 'unsafe-inline' 'unsafe-eval'; " +
-    "style-src 'self' 'unsafe-inline'; " +
-    "img-src 'self' data:; " +
-    "connect-src 'self'; " +
-    "font-src 'self';"
-  );
-  next();
-});
-
 app.listen(PORT, "0.0.0.0", () => {
   console.log(`Server is running on port ${PORT}`);
 });
