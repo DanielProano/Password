@@ -108,7 +108,7 @@ module.exports = function (db, auth_limiter) {
       }
     } catch (err) {
       console.error("Error occured:", err);
-      res.status(500).json({ error: err });
+      res.status(500).json({ error: err.message });
     }
   });
 
