@@ -50,7 +50,7 @@ function Register() {
       if (response.ok) {
         navigate("/RegisterSuccess");
       } else {
-        setOutput("Couldnt Register");
+        setOutput("Couldn't Register");
       }
     } catch (error) {
       console.error("Error:", error);

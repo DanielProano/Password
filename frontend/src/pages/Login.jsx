@@ -26,6 +26,9 @@ function LoginPage() {
       const { master_salt } = await salt_response.json();
       const hash = await bcrypt.hashSync(password, master_salt);
 
+      console.log(email);
+      console.log(hash);
+
       const response = await fetch(`${config.backend}/verify`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
