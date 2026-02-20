@@ -5,32 +5,24 @@
 }
 
 .login-page h1 {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   margin-top: 80px;
-  text-align: center;
   font-size: 5rem;
 }
 
 .login-page h2 {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  height: 80px;
   font-size: 2rem;
 }
 
 .login-page .box {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   max-width: 50%;
   margin-top: 40px;
-  border: 2px solid #3a4e7e;
+  border: 2px solid #3c4e77;
   background-color: #202733;
   padding: 3em;
   border-radius: 24px;
@@ -38,12 +30,10 @@
 
 .login-page .input {
   border: 2px solid #87a6ed;
-  background-color: #202733;
   padding: 8px 16px;
   margin: 10px;
-  border-radius: 9999px;
+  border-radius: 20px;
   display: flex;
-  align-items: center;
   width: 250px;
 }
 
@@ -54,9 +44,6 @@
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 100;
-  font-family: Verdana;
-  color: #87a6ed;
-  cursor: pointer;
   transition: border-color 0.1s;
   margin-top: 20px;
 }
@@ -67,8 +54,4 @@
 
 .login-page .register-link {
   margin-top: 25px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
