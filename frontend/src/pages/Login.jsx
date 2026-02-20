@@ -19,14 +19,14 @@ function LoginPage() {
       console.log("Entered login");
 
       const salt_response = await fetch(
-        `${config.backend}/api/salt?user=${encodeURIComponent(email)}`
+        `${config.backend}/salt?user=${encodeURIComponent(email)}`
       );
       console.log(salt_response);
 
       const { master_salt } = await salt_response.json();
       const hash = await bcrypt.hashSync(password, master_salt);
 
-      const response = await fetch(`${config.backend}/api/verify`, {
+      const response = await fetch(`${config.backend}/verify`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ user: email, hash: hash }),

@@ -26,7 +26,7 @@ function Vault() {
 		const { key, token } = derived_key;
 
 		try {
-			const response = await fetch(`${config.backend}/api/vault/get`, {
+			const response = await fetch(`${config.backend}/vault/get`, {
 				method: 'GET',
 				headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
 			});
@@ -73,7 +73,7 @@ function Vault() {
 		const passEnc = await encrypt(key, password);
 		const notesEnc = await encrypt(key, notes);
 
-		const response = await fetch(`${config.backend}/api/vault/store`, {
+		const response = await fetch(`${config.backend}/vault/store`, {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
 			body: JSON.stringify({
@@ -94,7 +94,7 @@ function Vault() {
 
 		const { token } = derived_key;
 
-		const response = await fetch(`${config.backend}/api/vault/delete/${id}`, {
+		const response = await fetch(`${config.backend}/vault/delete/${id}`, {
 			method: 'DELETE',
 			headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
 		});

@@ -1,4 +1,4 @@
 {
-   "backend" : "https://dannyproano.com",
+   "backend" : "https://dannyproano.com/api/pass",
    "port" : 5173
 }
