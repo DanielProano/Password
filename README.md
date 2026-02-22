@@ -118,12 +118,13 @@ PORT=8080
 
 ## Installation
 
+```bash
 git clone https://github.com/DanielProano/Password-Manager.git
 
 cd password-manager
 
-@echo "# (make the .ENV file in the backend)"
+# (make the .ENV file in the backend)
 
-@echo "Script to auto deploy to localhost"
+#Script to auto deploy to localhost
 
 ./host.sh
