@@ -110,7 +110,7 @@ derived from the PBDKF2 algorithm is used to encrypt the vault information.
 
 the master password.
 
-## .Env
+## .Env file
 
 JWT_SECRET=Some Secret String
 
@@ -123,8 +123,8 @@ git clone https://github.com/DanielProano/Password-Manager.git
 
 cd password-manager
 
-# (make the .ENV file in the backend)
+# Make the .ENV file in the backend 
 
-#Script to auto deploy to localhost
+# Script to auto deploy to localhost
 
 ./host.sh
