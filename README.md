@@ -48,7 +48,15 @@ Inspired by Bitwarden Password Manager: https://bitwarden.com/
 
 ### Google Cloud Run
 
-- Deployed via serverless Network Endpoint Group (NEG) 
+- Frontend and Backend deployed via serverless Network Endpoint Group (NEG) under
+
+  my portfolio website (dannyproano.com) using a load balancer
+
+  for traffic and API routing
+
+- The first iteration of this deployment saw the use of an NGINX reverse proxy
+
+  along with Docker Compose and an AWS VM, but was so painful, I switched to GCR
 
 ### Backend:
 
