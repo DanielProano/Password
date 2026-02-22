@@ -11,12 +11,12 @@ to another party (the verifier) that it knows a value of a password, without rev
 anything other than the fact that it knows the password to the verifier."
 
 
-In other words, my password manager ensures complete security for users data, even assuming
+<TAB>In other words, my password manager ensures complete security for users data, even assuming
 
 the worst case where an attacker gets the backend. 
 
 
-Inspired by Bitwarden Password Manager: https://bitwarden.com/
+<TAB>Inspired by Bitwarden Password Manager: https://bitwarden.com/
 
 ## Features
 
@@ -97,7 +97,7 @@ is salted and hashed locally using bcrypt's blowfish hashing algorithm and
 then stored alongside the salt and username. 
 
 
-Upon login, the salt is retrieved from the backend and used to verify the hashes from the input and database
+<TAB>Upon login, the salt is retrieved from the backend and used to verify the hashes from the input and database
 
 are the same. Then, a JWT token with a unique secret and hour validity 
 
@@ -105,7 +105,8 @@ is generated and used throughout the users session. Finally, a strong key
 
 derived from the PBDKF2 algorithm is used to encrypt the vault information.
 
-This ensures that even if the database is compromised, it is unreadable without the
+
+<TAB>This ensures that even if the database is compromised, it is unreadable without the
 
 the master password.
 
@@ -121,8 +122,8 @@ git clone https://github.com/DanielProano/Password-Manager.git
 
 cd password-manager
 
-# (make the .ENV file in the backend)
+'# (make the .ENV file in the backend)'
 
-# Script to auto deploy to localhost
+'# Script to auto deploy to localhost'
 
 ./host.sh
