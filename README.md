@@ -2,9 +2,21 @@
 
 # Password Manager
 
-A Zero-Knowledge Password Manager MVP, implementing modern
+A Zero-Knowledge Password Manager MVP.
 
-hashing and encryption methods
+By Wikipedia: "a type of zero-knowledge proof that allows one party (the prover) to prove
+
+to another party (the verifier) that it knows a value of a password, without revealing
+
+anything other than the fact that it knows the password to the verifier."
+
+
+In other words, my password manager ensures complete security for users data, even assuming
+
+the worst case where an attacker gets the backend. 
+
+
+Inspired by Bitwarden Password Manager: https://bitwarden.com/
 
 ## Features
 
@@ -18,25 +30,31 @@ hashing and encryption methods
 
 - JSON Web Token generation and persistent session with JWT-based authentication
 
-- Ability to add, delete, and view vault info
+- Add, store, and delete passwords in an sqlite database
 
 - Rate Limiting
 
 - Strong master passwords enforced
 
-- Automatic vault lock after inactivity
+- Automatic vault lock after an hour of inactivity
 
 ## Tech Stack
 
 ### Docker
 
-- For containerizing and isolating the app
+- For containerizing, isolation, and easy deployment of both
 
-### Nginx 
+  the backend and frontend
 
-- Acts as a reverse proxy
+### Google Cloud Run
+
+- Deployed via serverless Network Endpoint Group (NEG) 
 
 ### Backend:
+
+- **javascript** - Makes up a majority of my backend
+
+- **sqlite3** - My Database of choice
 
 - **express.js** - Web Framework
 
@@ -44,15 +62,17 @@ hashing and encryption methods
 
 - **jsonwebtoken** - Library for JWT generation and verification
 
-- **sqlite3** - Database
-
-- **dotenv** - Library to load variables from .env
+- **dotenv** - Library to load and use local, secret variables
 
 - **crypto** - Library used to create secure and random salts
 
 ### Frontend:
 
+- **React** - My language of choice to write the frontend
+
 - **vite** - Frontend build tool
+
+- **dproano_npm/website-topbar** - My custom topbar component publically available on npm 
 
 - **react-router-dom** - React library facilitating the interaction between
 
@@ -60,15 +80,16 @@ hashing and encryption methods
 
 different pages
 
-## Security Model
+## Security Model Explanation
 
 Upon registration, with strong password generation enforced, the master password
 
 is salted and hashed locally using bcrypt's blowfish hashing algorithm and
 
-then stored alongside the salt and username. Upon login, the salt is retrieved
+then stored alongside the salt and username. 
 
-from the backend and used to verify the hashes from the input and database
+
+Upon login, the salt is retrieved from the backend and used to verify the hashes from the input and database
 
 are the same. Then, a JWT token with a unique secret and hour validity 
 
@@ -82,7 +103,7 @@ the master password.
 
 ## .Env
 
-JWT_SECRET=Some String
+JWT_SECRET=Some Secret String
 
 PORT=8080
 
@@ -92,6 +113,8 @@ git clone https://github.com/DanielProano/Password-Manager.git
 
 cd password-manager
 
-(make the .ENV file in the backend)
+# (make the .ENV file in the backend)
+
+# Script to auto deploy to localhost
 
 ./host.sh
