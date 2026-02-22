@@ -122,8 +122,8 @@ git clone https://github.com/DanielProano/Password-Manager.git
 
 cd password-manager
 
-'# (make the .ENV file in the backend)'
+@echo "# (make the .ENV file in the backend)"
 
-'# Script to auto deploy to localhost'
+@echo "Script to auto deploy to localhost"
 
 ./host.sh
