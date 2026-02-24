@@ -1,4 +1,4 @@
-<img width="1901" height="909" alt="image" src="https://github.com/user-attachments/assets/1bbc9eb2-0704-4ddb-88b5-3e265aad4c47" />
+<img width="1500" height="891" alt="image" src="https://github.com/user-attachments/assets/41dbb445-30a6-4278-8123-ceebe62046dd" />
 
 # Password Manager
 
