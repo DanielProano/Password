@@ -124,9 +124,9 @@ Finally, a strong key derived from the PBDKF2 algorithm
 
 is used to encrypt the vault information.
 
-This ensures that even if the database is compromised, it is unreadable without the
+This ensures that even if the database is compromised,
 
-the master password.
+it is unreadable without the the master password.
 
 ## .Env file
 
