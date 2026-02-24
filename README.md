@@ -2,21 +2,31 @@
 
 # Password Manager
 
-A Zero-Knowledge Password Manager MVP.
+A full-stack Zero-Knowledge Password Manager MVP.
 
-By Wikipedia: "a type of zero-knowledge proof that allows one party (the prover) to prove
+<br>
 
-to another party (the verifier) that it knows a value of a password, without revealing
+By Wikipedia: "a type of zero-knowledge proof that
 
-anything other than the fact that it knows the password to the verifier."
+allows one party (the prover) to prove to another 
 
+party (the verifier) that it knows a value of a 
 
-<TAB>In other words, my password manager ensures complete security for users data, even assuming
+password, without revealing anything other than
 
-the worst case where an attacker gets the backend. 
+the fact that it knows the password to the verifier."
 
+<br>
 
-<TAB>Inspired by Bitwarden Password Manager: https://bitwarden.com/
+In other words, my password manager ensures complete
+
+security for users data, even assuming the worst case 
+
+where an attacker gets the backend. 
+
+<br>
+
+Inspired by Bitwarden Password Manager: https://bitwarden.com/
 
 ## Features
 
@@ -90,23 +100,31 @@ different pages
 
 ## Security Model Explanation
 
-Upon registration, with strong password generation enforced, the master password
+Upon registration, with strong password generation 
 
-is salted and hashed locally using bcrypt's blowfish hashing algorithm and
+enforced, the master password is salted and hashed
+
+locally using bcrypt's blowfish hashing algorithm and
 
 then stored alongside the salt and username. 
 
+<br>
 
-<TAB>Upon login, the salt is retrieved from the backend and used to verify the hashes from the input and database
+Upon login, the salt is retrieved from the backend and used
 
-are the same. Then, a JWT token with a unique secret and hour validity 
+to verify the hashes from the input and database are the same.
 
-is generated and used throughout the users session. Finally, a strong key
+Then, a JWT token with a unique secret and hour validity 
 
-derived from the PBDKF2 algorithm is used to encrypt the vault information.
+is generated and used throughout the users session.
 
+<br>
 
-<TAB>This ensures that even if the database is compromised, it is unreadable without the
+Finally, a strong key derived from the PBDKF2 algorithm
+
+is used to encrypt the vault information.
+
+This ensures that even if the database is compromised, it is unreadable without the
 
 the master password.
 
