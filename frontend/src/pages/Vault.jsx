@@ -160,7 +160,7 @@ function Vault() {
 					<div className="vault-popup">
 						<div className="vault-popup-header">
 							<h2>{currentEntry.service_decoded}</h2>
-							<button onClick={() => setShowDetailsPopup(false)}>✕</button>
+							<IoMdClose className="vault-button" onClick={() => setShowDetailsPopup(false)} />
 						</div>
 						<div className="vault-popup-body">
 							<div>
