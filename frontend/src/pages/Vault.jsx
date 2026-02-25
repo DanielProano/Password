@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { use_auth } from '../context/AuthContext';
 import { encrypt, decrypt } from '../context/Encrypt';
+import { IoMdClose } from "react-icons/io";
 import './Vault.css';
 import config from "../config.json";
 
@@ -148,7 +149,7 @@ function Vault() {
 							<div className="vault-entry-icon">{entry.service_decoded.charAt(0).toUpperCase()}</div>
 							<p>{entry.service_decoded}</p>
 						</div>
-						<button className="vault-entry-delete" onClick={e => { e.stopPropagation(); deleteInfo(entry.id); }}>✕</button>
+						<IoMdClose className="vault-entry-delete" onClick={e => {e.stopPropagation(); deleteInfo(entry.id); }} />
 					</div>
 				))}
 			</div>
