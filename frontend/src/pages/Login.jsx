@@ -6,6 +6,8 @@ import bcrypt from "bcryptjs";
 import config from "../config.json";
 import "./Login.css";
 
+const isDev = import.meta.env.DEV;
+
 function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -21,13 +23,9 @@ function LoginPage() {
       const salt_response = await fetch(
         `${config.backend}/salt?user=${encodeURIComponent(email)}`
       );
-      console.log(salt_response);
 
       const { master_salt } = await salt_response.json();
       const hash = await bcrypt.hashSync(password, master_salt);
-
-      console.log(email);
-      console.log(hash);
 
       const response = await fetch(`${config.backend}/verify`, {
         method: "POST",
@@ -92,6 +90,21 @@ function LoginPage() {
           {"Don't have an account? "} <Link to="/register">Register</Link>
         </p>
       </div>
+
+      {isDev && (
+        <button
+          className="login-button"
+          onClick={async () => {
+            const fakeToken = "dev-token";
+            const fakeKey = await derive_key("password123", "dev-salt");
+
+            set_derived_key({ key: fakeKey, token: fakeToken });
+            navigation("/vault");
+          }}
+        >
+          Dev 
+        </button>
+      )}
     </div>
   );
 }

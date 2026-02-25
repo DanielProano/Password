@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { use_auth } from '../context/AuthContext';
 import { encrypt, decrypt } from '../context/Encrypt';
 import { IoMdClose } from "react-icons/io";
+import { MdAddBox } from "react-icons/md";
 import './Vault.css';
 import config from "../config.json";
 
@@ -112,8 +113,8 @@ function Vault() {
 			<h1 className="vault-title">Vault</h1>
 			<p className="vault-output">{output}</p>
 
-			<div className="vault-add-btn-container">
-				<button className="vault-add-btn" onClick={() => setShowPopup(true)}>+</button>
+			<div className="vault-add-entry">
+				<MdAddBox className="vault-add-entry-btn" onClick={() => setShowPopup(true)} />
 			</div>
 
 			{showPopup && (
@@ -121,7 +122,7 @@ function Vault() {
 					<div className="vault-popup">
 						<div className="vault-popup-header">
 							<h2>Add New Password</h2>
-							<button onClick={() => setShowPopup(false)}>✕</button>
+							<IoMdClose className="vault-button" onClick={() => setShowPopup(false)}/>
 						</div>
 						<div className="vault-popup-body">
 							<label>Service</label>
@@ -136,7 +137,7 @@ function Vault() {
 							<label>Notes</label>
 							<textarea placeholder="Text" value={notes} onChange={e => setNotes(e.target.value)} rows={3} />
 
-							<button onClick={async () => { setShowPopup(false); await AddInfo(); }}>Done</button>
+							<button className="vault-button" onClick={async () => { setShowPopup(false); await AddInfo(); }}>Done</button>
 						</div>
 					</div>
 				</div>
